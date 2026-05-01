@@ -510,6 +510,54 @@
   }
 
   /* ============================================
+     UPCOMING — PROPANE + HOTEL (Coming Soon)
+     ============================================ */
+  .upcoming {
+    background: var(--cream);
+    max-width: none;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .upcoming-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .upcoming-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+  }
+  .upcoming-header .section-label {
+    justify-content: center;
+  }
+  .upcoming-header .section-label::before {
+    display: none;
+  }
+  .upcoming-header h2 {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .upcoming-header p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60ch;
+  }
+  .coming-soon-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem 0.95rem;
+    background: var(--paper);
+    border: 1px dashed var(--rule);
+    border-radius: 999px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============================================
      RSVP SECTION
      ============================================ */
   .rsvp {
@@ -1060,6 +1108,43 @@
 
   <div class="community-note">
     We are a community on this weekend. Bring what you can, share freely, and look out for each other. That is exactly the spirit Kim and Dave lived by.
+  </div>
+</section>
+
+<!-- ============================================
+     UPCOMING — PROPANE + HOTEL
+     ============================================ -->
+<section class="upcoming" id="upcoming">
+  <div class="upcoming-inner">
+    <div class="upcoming-header">
+      <div class="section-label">Coming soon</div>
+      <h2>A couple more details, <em>still in the works</em>.</h2>
+      <p>We're sorting these last pieces out and will share them in the WhatsApp group as soon as they're confirmed.</p>
+    </div>
+
+    <div class="practical-grid">
+      <div class="info-block">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--terracotta-deep);">
+            <path d="M12 2c-2 4-4 6-4 9a4 4 0 008 0c0-3-2-5-4-9z"/>
+          </svg>
+          Propane refills
+        </h3>
+        <p>Where the closest propane stop will be for refills during the weekend, and whether we can arrange any kind of on-site fill for pilots.</p>
+        <span class="coming-soon-badge">Coming soon</span>
+      </div>
+
+      <div class="info-block">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--terracotta-deep);">
+            <path d="M3 21V9l9-7 9 7v12M9 21V13h6v8M3 21h18"/>
+          </svg>
+          Hotel discount
+        </h3>
+        <p>For anyone who&rsquo;d rather not camp, we&rsquo;re checking with a nearby hotel on a group rate. The hotel name and booking code will land in the WhatsApp group as soon as it&rsquo;s locked in.</p>
+        <span class="coming-soon-badge">Coming soon</span>
+      </div>
+    </div>
   </div>
 </section>
 
