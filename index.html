@@ -350,9 +350,12 @@
   }
   .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-top: 2rem;
+  }
+  .day-card-pair {
+    grid-column: 1 / -1;
   }
   .weather-callout {
     margin: 2rem auto 0.5rem;
@@ -411,6 +414,14 @@
       var(--rb-green) 50%, var(--rb-green) 66.66%,
       var(--rb-blue) 66.66%, var(--rb-blue) 83.33%,
       var(--rb-purple) 83.33%, var(--rb-purple) 100%);
+  }
+  /* Friday and Saturday each carry a single accent color;
+     Sunday keeps the full rainbow stripe as the integration signal. */
+  .day-card-dave::before {
+    background: var(--amber);
+  }
+  .day-card-kim::before {
+    background: var(--terracotta);
   }
   .day-card-day {
     font-family: var(--serif);
@@ -992,7 +1003,7 @@
       </svg>
       <div class="section-label">The weekend</div>
       <h2>Three days, <em>woven together</em> by sky and fire.</h2>
-      <p style="max-width: 60ch; font-size: 1.05rem;">Below is the shape of the weekend. Some details &mdash; especially flight times and launch sites &mdash; are weather-dependent and will be confirmed in our WhatsApp group as the dates approach.</p>
+      <p style="max-width: 60ch; font-size: 1.05rem;">Friday honors Dave. Saturday honors Kim. Sunday honors the pair we all knew. The memorial flight is planned for Sunday morning, where it lands on the day the two of them lived as one. Beyond that, every morning is a flight opportunity, weather permitting &mdash; we fly any chance we get. Times and launch sites will be confirmed in our WhatsApp group as the dates approach.</p>
     </div>
 
     <div class="weather-callout">
@@ -1009,9 +1020,9 @@
     </div>
 
     <div class="schedule-grid">
-      <div class="day-card">
+      <div class="day-card day-card-dave">
         <div class="day-card-day">Friday &mdash; June 5</div>
-        <div class="day-card-date">Opening Night</div>
+        <div class="day-card-date">For Dave</div>
         <ul>
           <li>
             <strong>At sunset</strong>
@@ -1019,45 +1030,49 @@
           </li>
           <li>
             <strong>After dark</strong>
-            Casual potluck for anyone on site. Bring something to share.
+            Pizza night &mdash; Dave&rsquo;s favorite, and the right opener for the weekend. Brian will bring three extra-large vegan pizzas; everyone else, bring your favorite or have one delivered.
+          </li>
+          <li>
+            <strong>Around the fire</strong>
+            Open mic &mdash; share stories of Dave, a song, a memory, or whatever the night calls for.
           </li>
         </ul>
       </div>
 
-      <div class="day-card">
+      <div class="day-card day-card-kim">
         <div class="day-card-day">Saturday &mdash; June 6</div>
-        <div class="day-card-date">Memorial Flight</div>
+        <div class="day-card-date">For Kim</div>
         <ul>
           <li>
-            <strong>Early morning</strong>
-            Memorial flight. Times and launch location TBD by weather.
+            <strong>Throughout the day</strong>
+            A full-spectrum day &mdash; as much fun as Kim and Dave would have if they were with us.
           </li>
           <li>
             <strong>Evening</strong>
-            Official potluck dinner.
+            Potluck dinner &mdash; Kim&rsquo;s kind of gathering. Brian will make a vegan version of Kim&rsquo;s family nasi goreng, a recipe passed down to her from her father. Everyone brings something to share.
           </li>
           <li>
             <strong>After dinner</strong>
-            Open mic &mdash; share a few words about Kim &amp; Dave, a song, or a story.
-          </li>
-          <li>
-            <strong>Late evening</strong>
-            Closing ceremony, weather permitting.
+            Open mic &mdash; share stories of Kim, a song, or a memory.
           </li>
         </ul>
       </div>
 
-      <div class="day-card">
+      <div class="day-card day-card-pair">
         <div class="day-card-day">Sunday &mdash; June 7</div>
-        <div class="day-card-date">Backup &amp; Farewell</div>
+        <div class="day-card-date">For Kim &amp; Dave</div>
         <ul>
           <li>
-            <strong>Early morning</strong>
-            Backup memorial flight, if Saturday was scrubbed for conditions.
+            <strong>Sunday morning</strong>
+            Memorial flight &mdash; the heart of the weekend, landing on the day they lived as one. Times and launch location TBD by weather.
           </li>
           <li>
-            <strong>Back at the property</strong>
-            Closing ceremony, if it didn&rsquo;t happen Saturday night.
+            <strong>After the flight, or in lieu of it</strong>
+            Closing ceremony &mdash; together, however the morning arrives.
+          </li>
+          <li>
+            <strong>Through the afternoon</strong>
+            Casual hangouts and casual food. Folks head out as they&rsquo;re ready, carrying the love home with them.
           </li>
         </ul>
       </div>
