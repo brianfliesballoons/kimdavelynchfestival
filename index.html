@@ -60,6 +60,81 @@
   }
 
   /* ============================================
+     SITE NAV
+     ============================================ */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(251, 246, 236, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 183, 151, 0.35);
+  }
+  .site-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.85rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .site-nav-mark {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .site-nav-mark em {
+    font-style: italic;
+    color: var(--terracotta-deep);
+    font-weight: 400;
+    margin: 0 0.1em;
+  }
+  .site-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.85rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .site-nav-links a {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+  .site-nav-links a:hover {
+    color: var(--terracotta);
+  }
+  /* offset anchor scrolling so nav doesn't cover section titles */
+  section[id], header[id] {
+    scroll-margin-top: 70px;
+  }
+  @media (max-width: 600px) {
+    .site-nav-inner { padding: 0.7rem 4vw; gap: 1rem; }
+    .site-nav-mark { font-size: 0.95rem; }
+    .site-nav-links { gap: 1rem; }
+    .site-nav-links a { font-size: 0.78rem; }
+  }
+  @media (max-width: 420px) {
+    .site-nav-mark { display: none; }
+    .site-nav-links { width: 100%; justify-content: space-between; gap: 0.6rem; }
+    .site-nav-links a { font-size: 0.74rem; letter-spacing: 0.02em; }
+  }
+
+  /* ============================================
      HERO
      ============================================ */
   .hero {
@@ -634,6 +709,26 @@
     font-style: italic;
     font-family: var(--serif);
   }
+  .contact-alt {
+    margin: 2.5rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    max-width: 50ch;
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+  }
+  .contact-alt a {
+    color: var(--terracotta-deep);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+  .contact-alt a:hover {
+    color: var(--terracotta);
+    border-bottom-color: var(--terracotta);
+  }
   /* rainbow arc behind RSVP */
   .rsvp-rainbow {
     position: absolute;
@@ -751,6 +846,22 @@
 </style>
 </head>
 <body>
+
+<!-- ============================================
+     SITE NAV
+     ============================================ -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav-inner">
+    <a href="#top" class="site-nav-mark">Kim <em>&amp;</em> Dave</a>
+    <ul class="site-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#schedule">Weekend</a></li>
+      <li><a href="#practical">Camping</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- ============================================
      HERO
@@ -1191,6 +1302,10 @@
       Request to join
     </a>
     <div class="whatsapp-note">All requests are reviewed and approved by a moderator before joining.</div>
+
+    <div class="contact-alt">
+      WhatsApp is our main channel &mdash; all weekend updates come through there. <strong>Julia Brown</strong>&rsquo;s number is for technical difficulties; call <a href="tel:+19092635973">(909)&nbsp;263-5973</a> if you can&rsquo;t get connected, and she&rsquo;ll route anything to Brian if it needs his direct attention.
+    </div>
   </div>
 </section>
 
