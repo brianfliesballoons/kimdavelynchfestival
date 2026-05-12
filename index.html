@@ -537,6 +537,50 @@
     margin-bottom: 0.15rem;
   }
 
+  /* Day card photos */
+  .day-card-photo-wrap {
+    margin: 0 0 1.5rem;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--cream);
+  }
+  .day-card-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Sunday (pair) card: photo on left, content on right; photo gets featured treatment */
+  .day-card-pair-content {
+    display: grid;
+    grid-template-columns: minmax(280px, 40%) 1fr;
+    gap: 2.25rem;
+    align-items: start;
+  }
+  .day-card-pair .day-card-photo-wrap {
+    margin: 0;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 var(--rule), 0 12px 28px -16px rgba(42, 31, 23, 0.35);
+  }
+  .day-card-pair .day-card-photo-caption {
+    margin-top: 0.65rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  @media (max-width: 760px) {
+    .day-card-pair-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
   /* ============================================
      CAMPING + BRING SECTION (two-column)
      ============================================ */
@@ -854,11 +898,11 @@
   <div class="site-nav-inner">
     <a href="#top" class="site-nav-mark">Kim <em>&amp;</em> Dave</a>
     <ul class="site-nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#schedule">Weekend</a></li>
       <li><a href="#practical">Camping</a></li>
       <li><a href="#rsvp">RSVP</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </div>
 </nav>
@@ -1033,70 +1077,6 @@
 </header>
 
 <!-- ============================================
-     ABOUT
-     ============================================ -->
-<section class="about" id="about">
-  <div class="about-grid">
-    <div class="about-photo-wrap">
-      <img src="images/website_1.jpg" alt="Kim and Dave Lynch on their wedding day" class="about-photo">
-      <div class="about-caption">Kim &amp; Dave &mdash; the beginning</div>
-    </div>
-    <div>
-      <div class="section-label">About Kim &amp; Dave</div>
-      <h2>Two lives lived <em>generously</em>, in the air and on the ground.</h2>
-      <div class="about-text">
-        <p class="lede">Kim and Dave met at Cal State Fullerton. Shortly after college they were married &mdash; two working professionals in sales, and aspiring balloon pilots on the side. By 1988 they had set aside their &ldquo;normal&rdquo; jobs in favor of moving to Temecula and becoming full-time commercial balloon pilots.</p>
-        <p>Over the next four decades they became pillars of the ballooning community &mdash; not only in Temecula, but across the entire Southwest. In great part due to Dave&rsquo;s role as a DPE, and the seamless way Kim and Dave worked together on everything, when people had a question regarding aviation within the ballooning community of the Southwest, chances were one way or another those questions got escalated to Kim and Dave.</p>
-        <p>Along the way, they were entrusted with <strong style="color: var(--ink); font-weight: 500;">Reach for the Stars Hot Air Balloon Foundation</strong> by the founder and former director. Continuing that legacy was one of the most fulfilling parts of their ballooning journey, and the organization has grown greatly in part due to their efforts.</p>
-        <p>While their lifestyle could candidly be described as &ldquo;balloonists,&rdquo; they were also well known for the warmth they extended to their local community, their neighbors, and their friends. Kim was a kind soul who made friends with everyone &mdash; with a giving heart to which many would do well to aspire. Dave had a mind for teaching, a knack for meeting people where they were, and a gift for offering his opinion on a matter in a way that would be remarkably receivable to the listener.</p>
-        <p>Together they touched countless lives. It is our sincere hope that their memory can live on in our hearts &mdash; and carry forward the giving and kind demeanor we all crave to have, and to share, within our own communities.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- balloon divider -->
-<div class="balloon-divider">
-  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z" fill="#c0532a"/>
-    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#8a3915" opacity="0.2"/>
-    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#7a2a10"/>
-    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
-    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
-  </svg>
-  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <clipPath id="div-balloon-clip-1"><path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z"/></clipPath>
-    </defs>
-    <g clip-path="url(#div-balloon-clip-1)">
-      <rect x="0" y="0" width="120" height="30" fill="#d94c3d"/>
-      <rect x="0" y="30" width="120" height="22" fill="#e8893a"/>
-      <rect x="0" y="52" width="120" height="22" fill="#e8b93a"/>
-      <rect x="0" y="74" width="120" height="22" fill="#7ba84a"/>
-      <rect x="0" y="96" width="120" height="22" fill="#4a7ba8"/>
-      <rect x="0" y="118" width="120" height="20" fill="#8a5aa8"/>
-    </g>
-    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#000" opacity="0.12"/>
-    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#5a3a72"/>
-    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
-    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
-  </svg>
-  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z" fill="#e8b93a"/>
-    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#b8901c" opacity="0.2"/>
-    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#6b4416"/>
-    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
-    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
-    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
-  </svg>
-</div>
-
-<!-- ============================================
      SCHEDULE
      ============================================ -->
 <section class="schedule" id="schedule">
@@ -1132,6 +1112,9 @@
 
     <div class="schedule-grid">
       <div class="day-card day-card-dave">
+        <div class="day-card-photo-wrap">
+          <img src="images/dave_young.jpg" alt="Dave as a boy in a Twins baseball cap">
+        </div>
         <div class="day-card-day">Friday &mdash; June 5</div>
         <div class="day-card-date">For Dave</div>
         <ul>
@@ -1151,6 +1134,9 @@
       </div>
 
       <div class="day-card day-card-kim">
+        <div class="day-card-photo-wrap">
+          <img src="images/kim_young.jpg" alt="Kim as a young woman">
+        </div>
         <div class="day-card-day">Saturday &mdash; June 6</div>
         <div class="day-card-date">For Kim</div>
         <ul>
@@ -1170,22 +1156,32 @@
       </div>
 
       <div class="day-card day-card-pair">
-        <div class="day-card-day">Sunday &mdash; June 7</div>
-        <div class="day-card-date">For Kim &amp; Dave</div>
-        <ul>
-          <li>
-            <strong>Sunday morning</strong>
-            Memorial flight &mdash; the heart of the weekend, landing on the day they lived as one. Times and launch location TBD by weather.
-          </li>
-          <li>
-            <strong>After the flight, or in lieu of it</strong>
-            Closing ceremony &mdash; together, however the morning arrives.
-          </li>
-          <li>
-            <strong>Through the afternoon</strong>
-            Casual hangouts and casual food. Folks head out as they&rsquo;re ready, carrying the love home with them.
-          </li>
-        </ul>
+        <div class="day-card-pair-content">
+          <div>
+            <div class="day-card-photo-wrap">
+              <img src="images/young_couple.jpg" alt="Kim and Dave together in a hot air balloon basket, surrounded by friends">
+            </div>
+            <div class="day-card-photo-caption">Kim &amp; Dave, in their element.</div>
+          </div>
+          <div>
+            <div class="day-card-day">Sunday &mdash; June 7</div>
+            <div class="day-card-date">For Kim &amp; Dave</div>
+            <ul>
+              <li>
+                <strong>Sunday morning</strong>
+                Memorial flight &mdash; the heart of the weekend, landing on the day they lived as one. Times and launch location TBD by weather.
+              </li>
+              <li>
+                <strong>After the flight, or in lieu of it</strong>
+                Closing ceremony &mdash; together, however the morning arrives.
+              </li>
+              <li>
+                <strong>Through the afternoon</strong>
+                Casual hangouts and casual food. Folks head out as they&rsquo;re ready, carrying the love home with them.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1361,6 +1357,72 @@
 
   <div class="gallery-prompt">
     <strong>Bring your photos.</strong> &nbsp;Share the photos and videos you have of Kim and Dave directly into our WhatsApp group during the festival weekend. We&rsquo;ll gather the best of them for the next chapter of this site &mdash; the second annual.
+  </div>
+</section>
+
+
+<!-- balloon divider -->
+<div class="balloon-divider">
+  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z" fill="#c0532a"/>
+    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#8a3915" opacity="0.2"/>
+    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#7a2a10"/>
+    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
+    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
+  </svg>
+  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="div-balloon-clip-1"><path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z"/></clipPath>
+    </defs>
+    <g clip-path="url(#div-balloon-clip-1)">
+      <rect x="0" y="0" width="120" height="30" fill="#d94c3d"/>
+      <rect x="0" y="30" width="120" height="22" fill="#e8893a"/>
+      <rect x="0" y="52" width="120" height="22" fill="#e8b93a"/>
+      <rect x="0" y="74" width="120" height="22" fill="#7ba84a"/>
+      <rect x="0" y="96" width="120" height="22" fill="#4a7ba8"/>
+      <rect x="0" y="118" width="120" height="20" fill="#8a5aa8"/>
+    </g>
+    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#000" opacity="0.12"/>
+    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#5a3a72"/>
+    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
+    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
+  </svg>
+  <svg width="40" height="60" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 60 10 C 28 10, 12 38, 12 70 C 12 92, 22 110, 38 122 C 44 126, 48 130, 50 134 L 70 134 C 72 130, 76 126, 82 122 C 98 110, 108 92, 108 70 C 108 38, 92 10, 60 10 Z" fill="#e8b93a"/>
+    <path d="M 60 10 C 92 10, 108 38, 108 70 C 108 92, 98 110, 82 122 C 76 126, 72 130, 70 134 L 60 134 Z" fill="#b8901c" opacity="0.2"/>
+    <path d="M 50 134 L 70 134 L 68 142 L 52 142 Z" fill="#6b4416"/>
+    <line x1="50" y1="140" x2="44" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <line x1="70" y1="140" x2="76" y2="160" stroke="#2a1810" stroke-width="0.7"/>
+    <rect x="42" y="160" width="36" height="14" rx="1" fill="#8b6232"/>
+    <rect x="42" y="160" width="36" height="3" fill="#6b4823"/>
+  </svg>
+</div>
+
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <img src="images/website_1.jpg" alt="Kim and Dave Lynch on their wedding day" class="about-photo">
+      <div class="about-caption">Kim &amp; Dave &mdash; the beginning</div>
+    </div>
+    <div>
+      <div class="section-label">About Kim &amp; Dave</div>
+      <h2>Two lives lived <em>generously</em>, in the air and on the ground.</h2>
+      <div class="about-text">
+        <p class="lede">Kim and Dave met at Cal State Fullerton. Shortly after college they were married &mdash; two working professionals in sales, and aspiring balloon pilots on the side. By 1988 they had set aside their &ldquo;normal&rdquo; jobs in favor of moving to Temecula and becoming full-time commercial balloon pilots.</p>
+        <p>Over the next four decades they became pillars of the ballooning community &mdash; not only in Temecula, but across the entire Southwest. In great part due to Dave&rsquo;s role as a DPE, and the seamless way Kim and Dave worked together on everything, when people had a question regarding aviation within the ballooning community of the Southwest, chances were one way or another those questions got escalated to Kim and Dave.</p>
+        <p>Along the way, they were entrusted with <strong style="color: var(--ink); font-weight: 500;">Reach for the Stars Hot Air Balloon Foundation</strong> by the founder and former director. Continuing that legacy was one of the most fulfilling parts of their ballooning journey, and the organization has grown greatly in part due to their efforts.</p>
+        <p>While their lifestyle could candidly be described as &ldquo;balloonists,&rdquo; they were also well known for the warmth they extended to their local community, their neighbors, and their friends. Kim was a kind soul who made friends with everyone &mdash; with a giving heart to which many would do well to aspire. Dave had a mind for teaching, a knack for meeting people where they were, and a gift for offering his opinion on a matter in a way that would be remarkably receivable to the listener.</p>
+        <p>Together they touched countless lives. It is our sincere hope that their memory can live on in our hearts &mdash; and carry forward the giving and kind demeanor we all crave to have, and to share, within our own communities.</p>
+      </div>
+    </div>
   </div>
 </section>
 
